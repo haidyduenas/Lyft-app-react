@@ -1,30 +1,39 @@
-import React, { Component } from 'react';
-import './App.css';
-import Home from './Home';
-import Datos from './Datos'; 
-
+import React, {Component} from 'react';
 import {
-    BrowserRouter,
-    Route,
-    Link,
-    Redirect,
-    Switch
-  } from 'react-router-dom';
+	BrowserRouter,
+	Route,
+	Switch,
+	NavLink,
+	Redirect
+} from 'react-router-dom'
+import './App.css';
 
-class App extends Component {
-    render() {
-      return (
-        <BrowserRouter>
-        <div className="container">
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/home" component={Home} />
-              <Route path="/datos" component={Datos} />
-              <Route render={() => <Redirect to="/" />} />
-            </Switch>
-          </div>
-        </BrowserRouter>
-      );
-    }
-  }
+import Home from './Home';
+import SignUp from './SignUp';
+import SignUpForm from './SignUpForm';
+//import LyftMap from './LyftMap';
+
+const NotFound = (props) => {
+	return (
+		<div><h2> Error 404! </h2></div>
+	);
+}
+
+const App = (props) => {
+	const {model} =  props;
+	console.log('app.props', props)
+	return (<BrowserRouter>
+		<div>
+			<Switch>
+				<Route exact path="/"
+				       render={() => <Redirect to= {'/home'}/>}/>
+				<Route  path="/home" render={() => <Home model={model} />}/>
+				<Route  path="/signup" render={() => <SignUp model={model} />}/>
+				<Route  path="/signup-form" render={() => <SignUpForm model={model} />}/>
+				<Route component={NotFound}/>
+			</Switch>
+		</div>
+	</BrowserRouter>)
+}
+
 export default App;
