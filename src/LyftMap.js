@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import './mapa.css';
 import {
 	BrowserRouter,
 	Route,
@@ -7,7 +6,6 @@ import {
 	NavLink,
 	Redirect
 } from 'react-router-dom'
-
 
 //import { withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps'
 

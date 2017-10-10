@@ -26,14 +26,14 @@ const App = (props) => {
 	return (<BrowserRouter>
 		<div>
 			<Switch>
-				<Route exact path="/"
+				<Route  path="/Lyft-app-react"
 				       render={() => <Redirect to= {'/home'}/>}/>
 				<Route  path="/home" render={() => <Home model={model} />}/>
 				<Route  path="/signup" render={() => <SignUp model={model} />}/>
 				<Route  path="/code" render={() => <Code model={model} />}/>
 				<Route  path="/signup-form" render={() => <SignUpForm model={model} />}/>
 				<Route  path="/lyftmap" render={() => <LyftMap model={model} />}/>
-				<Route component={NotFound}/>
+				<Route component={Home}/>
 			</Switch>
 		</div>
 	</BrowserRouter>)
