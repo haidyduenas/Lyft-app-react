@@ -11,7 +11,7 @@ import './App.css';
 import Home from './Home';
 import SignUp from './SignUp';
 import SignUpForm from './SignUpForm';
-//import LyftMap from './LyftMap';
+import LyftMap from './LyftMap';
 
 const NotFound = (props) => {
 	return (
@@ -30,6 +30,7 @@ const App = (props) => {
 				<Route  path="/home" render={() => <Home model={model} />}/>
 				<Route  path="/signup" render={() => <SignUp model={model} />}/>
 				<Route  path="/signup-form" render={() => <SignUpForm model={model} />}/>
+				<Route  path="/lyftmap" render={() => <LyftMap model={model} />}/>
 				<Route component={NotFound}/>
 			</Switch>
 		</div>
