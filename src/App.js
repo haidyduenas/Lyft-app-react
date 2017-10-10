@@ -1,45 +1,30 @@
 import React, { Component } from 'react';
-import './App.css'; 
+import './App.css';
+import Home from './Home';
+import Datos from './Datos'; 
 
 import {
-  BrowserRouter,
-  Route,
-  Switch,
-  NavLink,
-  NavNavLink,
-  Redirect
-} from 'react-router-dom';
+    BrowserRouter,
+    Route,
+    Link,
+    Redirect,
+    Switch
+  } from 'react-router-dom';
 
-const Portada = () => {
-  return(<div className="index">
-   <section className="bienvenida">
-      <div className="container-fluid">
-          <div className="container">
-              <div className="row">
-                  <div className="col-md-12 col-sm-12 col-xs-12 text-center">
-                      <img src="http://www.whatsthefare.com/static/img/lyft_logo.png" alt="" width="150"/>
-                  </div>
-              </div>
+class App extends Component {
+    render() {
+      return (
+        <BrowserRouter>
+        <div className="container">
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/home" component={Home} />
+              <Route path="/datos" component={Datos} />
+              <Route render={() => <Redirect to="/" />} />
+            </Switch>
           </div>
-           <div className="container btn-login">
-               <div className="row">
-                   <div className="col-md-6 col-sm-6 col-xs-6 text-center">
-                       <a href="#" className="btn btn-default btn-lg active login " role="button">Log in</a>
-                   </div>
-                   <div className="col-md-6 col-sm-6 col-xs-6 text-center">
-                        <a href="signup.html" className="btn btn-default btn-lg active init " role="button">Sing up</a>
-                   </div>
-               </div>
-           </div>
-       </div>
-   </section>
-</div>);
-}
-
-
-const App = () => (
-  <Portada/>
-)
-
-
+        </BrowserRouter>
+      );
+    }
+  }
 export default App;
