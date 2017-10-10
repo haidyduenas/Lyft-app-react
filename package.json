@@ -2,7 +2,7 @@
   "name": "react-routing-evaluado",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://haidyduenas.github.io/courses-directory/",
+  "homepage": "https://haidyduenas.github.io/Lyft-app-react/",
   "dependencies": {
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
