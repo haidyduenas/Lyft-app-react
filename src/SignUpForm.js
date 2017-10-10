@@ -33,7 +33,7 @@ class SignUpForm extends Component {
                             <div className="col-md-2 col-sm-2 col-xs-2">
                                 <div className="back-page1 text-center">
                                 <ul>
-                                    <li className="btn btn-default btn-lg active init"><NavLink className="btn btn-default btn-lg active init" to="/home">Sing Up</NavLink ></li>
+                                    <li className="btn btn-default btn-lg active init"><NavLink className="btn btn-default btn-lg active init" to="/signup">Sing Up</NavLink ></li>
                                 </ul>
                                 </div>
                             </div>
