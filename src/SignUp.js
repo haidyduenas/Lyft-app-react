@@ -74,6 +74,58 @@ const SignUp = ({model}) => {
 			</NavLink>
 	 	</div>
  	</div> 
+		  <div>
+   			<header className="text-center">
+			   	<div className="col-md-2 col-sm-2 col-xs-2">
+			   		<div className="back-page1 text-center">
+			   			<ul>
+				   			<li className="btn btn-default btn-lg active init"><NavLink className="btn btn-default btn-lg active init" to="/home">Sing Up</NavLink ></li>
+			   			</ul>
+			   		</div>
+		   		</div>
+				<h1>Sign up</h1>
+				<h4>Join now for free ride credit</h4>
+			</header>
+	  		<section className="container">
+	  			<div className="phone container">
+			 		 <div className="row">
+			  			<div className="col-sm-3 col-xs-3">
+					  		<div className="dropdown">
+						  		<div className="dropdown-toggle" data-toggle="dropdown">
+							  		<img className="img-responsive" src="http://painternacional.com/img/logos/peru-bandera.png"/>
+						  		</div>
+								<ul className="dropdown-menu">
+									<li>
+										<a id="+51">
+										<img className="img-responsive" src="http://painternacional.com/img/logos/peru-bandera.png"/> Perú</a>
+									</li>
+									<li>
+										<a id="+56">
+										<img className="img-responsive" src="http://www.banderasysoportes.es/WebRoot/StoreES3/Shops/ec4701/5263/E9E0/9BA2/ECED/9429/AC10/140A/62FD/Chile.png"/> Chile</a>
+									</li>
+									<li>
+										<a id="+52">
+										<img className="img-responsive" src="http://smartleges.com/wp-content/themes/smartleges/images/flags/mx.png"/> Mexico</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div className="col-lg-2 col-sm-2 col-xs-2">
+							<input type="text" id="codigo" value="+51" readOnly/>
+						</div>
+						<div className="col-sm-7 col-xs-7">
+							<input type="number" id="telefono" placeholder="123456789"/>
+						</div>
+					</div>
+	  			</div>
+	  		</section>
+	  		<div className="next">
+		  		<NavLink to={"/code"}
+			         className="btn btn-lyft btn-lg btn-block">
+					Next
+				</NavLink>
+	 		</div>
+ 		 </div> 
 	);
 }
 
