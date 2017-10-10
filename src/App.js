@@ -26,7 +26,7 @@ const App = (props) => {
 	return (<BrowserRouter>
 		<div>
 			<Switch>
-				<Route exact path="/Lyft-app-react"
+				<Route  path="/Lyft-app-react"
 				       render={() => <Redirect to= {'/home'}/>}/>
 				<Route  path="/home" render={() => <Home model={model} />}/>
 				<Route  path="/signup" render={() => <SignUp model={model} />}/>
