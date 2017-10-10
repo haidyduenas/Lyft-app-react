@@ -50,13 +50,13 @@ class SignUpForm extends Component {
                     		<div class="col-md-12 col-sm-12 col-xs-12 text-center">
             					<form data-toggle="validator">
                 					<div className="form-group row">
-										<div className="col-lg-12 col-md-6 col-xs-6 input-group">
+										<div className="col-lg-12 col-md-6 input-group">
 										<span className="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                     					<input type="text" className="form-control inputName"placeholder="Your Name" required/>
                						 	</div>
 									</div>
                 					<div className="form-group row">
-										<div className="col-lg-12 col-md-6 col-xs-6 input-group">
+										<div className="col-lg-12 col-md-6 input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i> </span>
                     					<input type="email" className="form-control inputEmail"  placeholder="Email" data-error="Bruh, that email address is invalid" required/>
                     					</div>
