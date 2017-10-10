@@ -7,20 +7,25 @@ import {
 
 const SignUp = ({model}) => {
 	return (
-  	<div>
-		<header className="text-center">
-			<div className="col-md-2 col-sm-2 col-xs-2">
-			   	<div className="back-page1 text-center">
-			   		<ul>
-				   		<li className="btn btn-default btn-lg active init"><NavLink className="btn btn-default btn-lg active init" to="/home">Sing Up</NavLink ></li>
-			   		</ul>
-			   	</div>
-		   	</div>
-			<h1>Sign up</h1>
-			<h4>Join now for free ride credit</h4>
-			<hr/>
-		</header>
-	  	<section className="container">
+  			<div>
+                <div className="container-fluid">
+				<div className="container">
+					<div className="row">
+						<div className="col-md-2 col-sm-2 col-xs-2">
+							<div className="back-page1 text-center">
+								<NavLink className="btn btn-default btn-lg active init" to="/home">&lt;</NavLink >
+							</div>
+						</div>
+						<div className="col-md-8 col-sm-8 col-xs-8">
+							<div className="title-signup text-center">
+								<h1>Sign up</h1>
+								<p>Join now for free ride credit</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	  		<section className="container">
 	  		<div className="phone container">
 			  	<div className="row">
 			  		<div className="col-sm-3 col-xs-3">
