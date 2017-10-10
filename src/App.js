@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import './App.css'; 
+import './App.css';
+import Datos from './Datos'; 
 
 import {
-  BrowserRouter,
-  Route,
-  Switch,
-  NavLink,
-  NavNavLink,
-  Redirect
-} from 'react-router-dom';
+    BrowserRouter,
+    Route,
+    Link,
+    Redirect,
+    Switch
+  } from 'react-router-dom';
 
-const Portada = () => {
+const Home = () => {
   return(<div className="index">
    <section className="bienvenida">
       <div className="container-fluid">
@@ -24,11 +24,13 @@ const Portada = () => {
            <div className="container btn-login">
                <div className="row">
                    <div className="col-md-6 col-sm-6 col-xs-6 text-center">
-                       <a href="#" className="btn btn-default btn-lg active login " role="button">Log in</a>
+                       <a to="/about" className="btn btn-default btn-lg active login" role="button">Log in</a>
                    </div>
                    <div className="col-md-6 col-sm-6 col-xs-6 text-center">
-                        <a href="signup.html" className="btn btn-default btn-lg active init " role="button">Sing up</a>
-                   </div>
+                   <ul>
+                   <li className="btn btn-default btn-lg active init"><Link className="btn btn-default btn-lg active init" to="/datos">Sing Up</Link></li>
+                    </ul>
+               </div>
                </div>
            </div>
        </div>
@@ -37,9 +39,19 @@ const Portada = () => {
 }
 
 
-const App = () => (
-  <Portada/>
-)
-
-
+class App extends Component {
+    render() {
+      return (
+        <BrowserRouter>
+        <div className="container">
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/datos" component={Datos} />
+              <Route render={() => <Redirect to="/" />} />
+            </Switch>
+          </div>
+        </BrowserRouter>
+      );
+    }
+  }
 export default App;
