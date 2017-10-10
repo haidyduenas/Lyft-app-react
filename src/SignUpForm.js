@@ -32,7 +32,7 @@ class SignUpForm extends Component {
                         <div className="row">
                             <div className="col-md-2 col-sm-2 col-xs-2">
                                 <div className="back-page1 text-center">
-									<NavLink className="btn btn-default btn-lg active init" to="/signup">&lt;</NavLink >
+					<NavLink className="btn btn-default btn-lg active init" to="/code">&lt;</NavLink >
                                 </div>
                             </div>
                             <div className="col-md-8 col-sm-8 col-xs-8">
@@ -44,38 +44,38 @@ class SignUpForm extends Component {
                         </div>
                     </div>
                 </div>
-				<div class="container-fluid">
+		<div class="container-fluid">
             		<div class="container">
                 		<div class="row">
                     		<div class="col-md-12 col-sm-12 col-xs-12 text-center">
-            					<form data-toggle="validator">
-                					<div className="form-group row">
-										<div className="col-lg-12 col-md-6 col-xs-6 input-group">
-										<span className="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    					<input type="text" className="form-control inputName"placeholder="Your Name" required/>
+            				<form data-toggle="validator">
+                				<div className="form-group row">
+							<div className="col-lg-12 col-md-6 input-group">
+								<span className="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    						<input type="text" className="form-control inputName" placeholder="Your Name" required/>
                						 	</div>
-									</div>
+							</div>
                 					<div className="form-group row">
-										<div className="col-lg-12 col-md-6 col-xs-6 input-group">
-										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i> </span>
-                    					<input type="email" className="form-control inputEmail"  placeholder="Email" data-error="Bruh, that email address is invalid" required/>
-                    					</div>
-										<div className="help-block with-errors"></div>
+								<div className="col-lg-12 col-md-6 col-xs-6 input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i> </span>
+                    							<input type="email" className="form-control inputEmail"  placeholder="Email" data-error="Bruh, that email address is invalid" required/>
+                    						</div>
+								<div className="help-block with-errors"></div>
                 					</div>
-									<section className="container-fluid form">
-										<label className="form-check-label">
-											<input className="form-check-input agreeUser" type="checkbox" onChange={onInputChange} required/>
-											I agree to Lyft's <a href="lyft.com"> Terms of Service</a>
-										</label>
+							<section className="container-fluid form">
+								<label className="form-check-label">
+									<input className="form-check-input agreeUser" type="checkbox" onChange={onInputChange} required/>
+										I agree to Lyfts <a href="lyft.com"> Terms of Service</a>
+								</label>
 										{this.state.goFordward ?<NavLink to={"/lyftmap"}className="btn btn-lg btn-block btn-lyft">Next</NavLink>
 										:<button className="btn btn-lg btn-block btn-lyft disabled">Next</button>}
-									</section>
-           						 </form>
-							</div>
-            			</div>
+							</section>
+           					</form>
+					</div>
+					</div>
         			</div>
-				</div>
-            </div>
+			</div>
+			</div>
 		);
 	}
 }
