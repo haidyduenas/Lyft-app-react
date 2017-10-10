@@ -34,14 +34,13 @@ const LyftMap = ({model}) => {
 			<div className="container" id="container-map">
 				<div className="row">
 					<div className="col-md-12 col-sm-12">
-							Aqui ira nuestro mapa
+							nuestro mapa
 					</div>
 				</div>
 			</div>	
 		</div>
 			 
-		);
-		 					
+		);	 					
 }
 
 
