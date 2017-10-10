@@ -21,10 +21,10 @@ const Home = ( {model} ) => {
            </div>
             <div className="container btn-login">
                 <div className="row">
-                    <div className="col-md-4 col-sm-4 col-xs-4">
+                    <div className="col-md-6 col-sm-6 col-xs-6">
                         <a to="/about" className="btn btn-lg btn-block login" role="button">Log in</a>
                     </div>
-                    <div className="col-md-4 col-sm-4 col-xs-4">
+                    <div className="col-md-6 col-sm-6 col-xs-6">
                     <div>
                     <NavLink to={"/signup"}
                              className="btn btn-lyft btn-lg btn-block"
