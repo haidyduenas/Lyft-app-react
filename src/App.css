@@ -170,3 +170,62 @@ nav{
   padding-top: 50vw;
 
 }
+
+/*Estilos de Sig-up*/
+
+.ocultar{
+    background: grey;
+}
+
+#sign-up {
+	background: yellow
+}
+
+.phone .dropdown{
+	margin: 0 auto;
+	width: 80%;
+}
+.dropdown img{
+	width: 50%;
+	display: inline-block;
+}
+.previus{
+	position: absolute;
+	top: 2%;
+	left: 5%;
+}
+
+.previus a{
+	color: black;
+}
+.phone .row div{
+	padding: 0;
+}
+
+.phone input{
+	width: 90%;
+	border:none;
+	outline: none;
+}
+.phone{
+	border: 1px solid silver;
+	border-radius: 5px;
+	padding: 10px 10px 0px 10px;
+	margin:10px 0;
+}
+
+.next button{
+	border: none;
+	width: 100%;
+	height: 50px;
+	background-color: grey;
+	color: white;
+}
+
+.next{
+	width: 95%;
+	margin: 100px auto;
+}
+.next .disabled{
+	opacity: 0.5;
+}
