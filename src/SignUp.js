@@ -56,7 +56,7 @@ const SignUp = ({model}) => {
 	  			</div>
 	      				<div className="row">
 		      				<div className="col-xs-12 col-sm-12 text-center">
-		    		 			 <p>We'll send you a text to verify your phone</p>
+		    		 			 <p>Well send you a text to verify your phone</p>
 		      				</div>
 	    				</div>
 	        			<div class="ocultar alert alert-warning text-center">
