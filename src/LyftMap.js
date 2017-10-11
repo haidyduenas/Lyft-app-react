@@ -10,7 +10,6 @@ import ReactGoogleAutocomplete from './ReactGoogleAutocomplete';
 	Redirect
 } from 'react-router-dom'
 
-
 const LyftMap = ({model}) => {
 
 	const state = {
@@ -70,26 +69,7 @@ const LyftMap = ({model}) => {
 				</div>
 			</div>
 		</header>
-		<div className="col-md-3 col-sm-3">
-			<div className="form-group">
-				<label htmlFor="destino"> Destino </label>
-				<ReactGoogleAutocomplete
-					onPlaceSelected={(place) => {
 
-						console.log (place);
-						model.setTarget (place);
-
-					}}
-					componentRestrictions={{country: "pe"}}
-				/>
-			</div>
-		</div>
-		<div className="col-md-3 col-sm-3">
-			<button id="ruta" className="btn btn-success" onClick={onPathBntClick}>
-				<i className="fa fa-bicycle" aria-hidden="true"></i>
-				Ruta
-			</button>
-		</div>
 		<GoogleMaps
 			model = {model}
 			properties={properties}
@@ -99,6 +79,34 @@ const LyftMap = ({model}) => {
 			isFiltering={isFiltering}
 			isRouting={isRouting}
 		/>
+		<div className="searchDestinity">
+			<div className="col-md-12 col-sm-12">
+				<div className="form-group">
+
+					<div>
+						 {
+							 model.price ? <h4>Price stimated {model.price} </h4> : <p />
+						 }
+					</div>
+					<ReactGoogleAutocomplete
+						onPlaceSelected={(place) => {
+
+							console.log (place);
+							model.setTarget (place);
+
+						}}
+						componentRestrictions={{country: "pe"}}
+					/>
+					<div className="col-md-12 col-sm-12">
+						<button id="ruta" className="btn btn-success route" onClick={onPathBntClick}>
+							<i className="fa fa-bicycle" aria-hidden="true"></i>
+								Ruta
+						</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
 
 
 	</div>);

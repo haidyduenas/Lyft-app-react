@@ -20,6 +20,7 @@ const loadMaps = (cb) => {
 			markers: []
 		};
 		this.autocompleteDestino = null;
+		this.price_stimated = null;
 	}
 
 	componentWillMount() {
@@ -175,17 +176,19 @@ const loadMaps = (cb) => {
 	}
 
 	drawPath(directionsService, directionsDisplay, origin, destination) {
+		  
 		if(destination != "" && origin != "") {
 			directionsService.route({
 					origin: origin,
 					destination: destination,
 					travelMode: "DRIVING"
 				},
-				function(response, status) {
+				(response, status) => {
 					if (status === "OK") {
 						directionsDisplay.setDirections(response);
+						this.props.model.setPrice (response.routes[0].overview_path.length / 10 +'USD');
 					} else {
-						alert("No ingresaste un origen y un destino validos");
+						//alert("No ingresaste un origen y un destino validos");
 					}
 				});
 		}
@@ -254,7 +257,6 @@ const loadMaps = (cb) => {
 		return (
 			<div className="mapContainer">
 				<div id="map" ref="map"></div>
-
 			</div>
 		);
 	}

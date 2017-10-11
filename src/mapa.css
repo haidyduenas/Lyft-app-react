@@ -7,6 +7,16 @@
     margin: 0 20px;
 }
 
+header{
+    background: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+    text-align: center;
+    padding: 10px;
+}
+
 #start{
     background-position: center;
     background-attachment: fixed;
@@ -150,6 +160,7 @@
   }
 
 input[type=text] {
+    width: 80%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -160,4 +171,27 @@ input[type=text] {
 
 input[type=text]:focus {
     border: 3px solid #555;
+}
+
+.searchDestinity{
+    background: none;
+    position: absolute;
+    top: 60%;
+    width: 100%;
+    z-index: 50;
+    text-align: center;
+    padding: 10px;
+}
+
+.route{
+    width: 80%;
+}
+
+#price{
+    height: 40px;
+    font-size: 20px;
+    color: #fff;
+    z-index :3000;
+    overflow: 10px;
+    background-color: #000;
 }
