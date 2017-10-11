@@ -21,83 +21,78 @@ class HeaderApp extends Component{
 class Code extends Component{
   constructor(props){
     super(props);
-    this.cantidad = 3;
-    this.tope = 10;
-    this.valorInput = undefined;
-    this.pinUsuario = undefined;
-    this.pinCreado = [];
-    this.t = undefined;
+    this.inputValue = undefined;
+    this.userCode = undefined;
+    this.createdCode = [];
     this.state = {
-      pin : [],
-      validar : false,
-      mostrar: false
+      codeLab : [],
+      validate : false,
+      toShow: false
     }
   }
-  generarPin(array){
-    let valores = Math.floor(Math.random() * this.tope);
+  generateCode(array){
+    let values = Math.floor((Math.random()*333)+111);
     if (!array.some(function (e) {
-            return e === valores
+            return e === values
         })) {
-        array.push(valores);
+        array.push(values);
     }
   }
-  crearPin(){
-    while (this.pinCreado.length < this.cantidad && this.cantidad < this.tope) {
-      this.generarPin(this.pinCreado);
-    }
-    this.setState({
-      pin : this.pinCreado
+  createCode(){
+      this.generateCode(this.createdCode);
+      this.setState({
+      codeLab : this.createdCode
     })
   }
-  mostrarTodo(e){
+  toShow(e){
     this.setState({
-      mostrar: true
+      toShow: true
     });
-    this.crearPin();
+    this.createCode();
   }
-  inputCambio(e){
-    let pinIngresado = this.state.pin.toString().replace(/,/g, "");
-    if(e.target.value === pinIngresado){
+  changeInput(e){
+    let currentInput = this.state.codeLab.toString().replace(/,/g, "");
+    if(e.target.value === currentInput){
       this.setState({
-        validar : true
+        validate : true
       });
     } else {
       this.setState({
-        validar : false 
+        validate : false 
       });
     } 
   }
-  validarPin(input){
-    this.pinUsuario = input;
+  validateCode(input){
+    this.userCode = input;
   }
 
   render(){
     return(
       <div className="text-center">
       <HeaderApp/>
-      {this.state.mostrar &&
+      {this.state.toShow &&
       <div>
         <div>
-          <h4 >Tu código Lyft es:</h4>
-          <h5><strong>LAB-{this.state.pin}</strong></h5>
+          <h4 >Your code is:</h4>
+          <h5><strong>LAB-{this.state.codeLab}</strong></h5>
         </div>
-        <form onSubmit={(e) => {e.preventDefault();this.validarPin(this.valorInput);}}>
+        <form onSubmit={(e) => {e.preventDefault();this.validateCode(this.inputValue);}}>
             <strong>LAB-</strong>
             <input type="number" 
-                 value={this.valorInput} 
-                 onChange={(e) => {this.inputCambio(e)}}/>
+                 value={this.inputValue} 
+                 onChange={(e) => {this.changeInput(e)}}/>
         {
 
-            this.state.validar ? 
+            this.state.validate ? 
             <NavLink 
                   to = "/signup-form"    
-                 className="btn btn-lg btnSiguiente " 
+                 className="btn btn-lyft btn-lg btn-block" 
                  >
                  Next
               </NavLink>
                 :
             <button 
-                 className="btn btn-lg btnSiguiente disabled" 
+                 className="btn btn-lg btn-block btn-lyft disabled" 
                  >
                  Next
           </button>
@@ -106,9 +101,9 @@ class Code extends Component{
         </form>
       </div>
       }
-      {!this.state.mostrar && 
+      {!this.state.toShow && 
         <div>
-          <button className="btnSiguiente" onClick={(e) => {this.mostrarTodo(e)}}>Generar Pin</button>
+          <button className="btn btn-lyft btn-lg btn-block" onClick={(e) => {this.toShow(e)}}>Get Code</button>
         </div> 
       }  
       </div>

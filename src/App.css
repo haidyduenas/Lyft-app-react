@@ -79,7 +79,7 @@ nav{
 }
 .dropdown-toggle{
   background-color: white;
-  border:1px solid #ccc;
+  border-right:1px solid #ccc;
 }
 .inputs{
   margin:5px 0;
@@ -172,33 +172,15 @@ nav{
 }
 
 /*Estilos de Sig-up*/
-
-.ocultar{
-    background: grey;
+.phone{
+	border: 1px solid silver;
+	border-radius: 5px;
+	margin:10px 0;
+  line-height: 40px;
 }
-
-.sign-up {
-	background: yellow
-}
-
 .phone .dropdown{
 	margin: 0 auto;
-	width: 80%;
-}
-.dropdown img{
-	width: 30%;
-	display: inline-block;
-}
-.previus{
-	position: absolute;
-	top: 2%;
-	left: 5%;
-}
-
-/* Kely*/
-.phone .dropdown{
-	margin: 0 auto;
-	width: 80%;
+	width: 40%;
 }
 .dropdown img{
 	width: 50%;
@@ -212,10 +194,9 @@ nav{
 	width: 90%;
 	border:none;
 	outline: none;
+ 
 }
-.phone{
-	border: 1px solid silver;
-	border-radius: 5px;
-	padding: 10px 10px 0px 10px;
-	margin:10px 0;
+input[type=text] {
+  transition: 0.5s;
+  outline: none;
 }

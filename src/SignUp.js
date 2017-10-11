@@ -79,7 +79,7 @@ class SignUp extends Component {
 			   }
 		  }
 		  return (
-				<div>
+				<div className="container-fluid">
 				  	<HeaderApp/>
 					<section className="container">
 					<div className="phone container">
@@ -101,7 +101,7 @@ class SignUp extends Component {
 								</div>
 							</div>
 							<div className="col-lg-2 col-sm-2 col-xs-2">
-								<input type="text" value = {this.countriesFlag[this.state.selectFlag].countriesCode} />
+								<input defaultValue = {this.countriesFlag[this.state.selectFlag].countriesCode} />
 							</div>
 							<div className="col-sm-7 col-xs-7">
 								<input type="number"  placeholder="123456789" onKeyUp={changeInput}/>
