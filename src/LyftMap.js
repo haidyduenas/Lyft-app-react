@@ -52,7 +52,7 @@ const LyftMap = ({model}) => {
 	}
 
 	return (<div>
-		<header>
+		<header id="head">
 			<div className="container">
 				<div className="row">
 					<div className="col-md-12 cabish">
