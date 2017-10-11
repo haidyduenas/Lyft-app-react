@@ -2,62 +2,114 @@ import React, {Component} from 'react';
 import {
 	NavLink
 } from 'react-router-dom';
-import './App.css';
+import './Code.css';
+ 
+class Code extends Component{
+  constructor(props){
+    super(props);
+    this.cantidad = 3;
+    this.tope = 10;
+    this.valorInput = undefined;
+    this.pinUsuario = undefined;
+    this.pinCreado = [];
+    this.t = undefined;
+    this.state = {
+      pin : [],
+      validar : false
+      //mostrar: false
+    }
+  }
+  generarPin(array){
+    let valores = Math.floor(Math.random() * this.tope);
+    if (!array.some(function (e) {
+            return e === valores
+        })) {
+        array.push(valores);
+    }
+  }
+  crearPin(){
+    while (this.pinCreado.length < this.cantidad && this.cantidad < this.tope) {
+      this.generarPin(this.pinCreado);
+    }
+    this.setState({
+      pin : this.pinCreado
+    })
+  }
+  mostrarTodo(e){
+    this.setState({
+      mostrar: true
+    });
+    this.crearPin();
+  }
+  inputCambio(e){
+    let pinIngresado = this.state.pin.toString().replace(/,/g, "");
+    if(e.target.value === pinIngresado){
+      this.setState({
+        validar : true
+      });
+    } else {
+      this.setState({
+        validar : false 
+      });
+    } 
+  }
+  validarPin(input){
+    this.pinUsuario = input;
+  }
+  render(){
+    return(
+      <div className="text-center">
+      <header>
+        <div className="btnVolver">
+         <NavLink to="/signup">
+                <i className="material-icons volver">keyboard_arrow_left</i>
+          </NavLink>
+        </div>
+        <h1 className="text-center">Sign Up</h1>
+        <h4 className="text-center">Join Now for free ride credit.</h4>
+        <hr/>
+      </header>
+      {this.state.mostrar &&
+      <div>
+        <div>
+          <h4 >Tu código Lyft es:</h4>
+          <h5><strong>LAB-{this.state.pin}</strong></h5>
+        </div>
+        <form onSubmit={(e) => {
+          e.preventDefault();
+          this.validarPin(this.valorInput);
+        }}>
+          <strong>LAB-</strong>
+          <input type="number" 
+                 value={this.valorInput} 
+                 onChange={(e) => {this.inputCambio(e)}}/>
+        {
 
+            this.state.validar ? 
+            <NavLink 
+                  to = "/signup-form"    
+                 className="btn btn-lg btnSiguiente " 
+                 >
+                 Next
+              </NavLink>
+                :
+            <button 
+                 className="btn btn-lg btnSiguiente disabled" 
+                 >
+                 Next
+          </button>
 
-const geraNumeroAleatorio = () => {
-  var numero_aleatorio = Math.random();
-
-  numero_aleatorio = Math.floor((Math.random()*333)+111);
-  alert(numero_aleatorio);
-}
-
-const Code = () => {
-   return (
-         <div>
-            <div className="container-fluid">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-2 col-sm-2 col-xs-2">
-                            <div className="back-page1 text-center">
-                                <NavLink className="btn btn-default btn-lg active init" to="/signup">&lt;</NavLink >
-                            </div>
-                        </div>
-                        <div className="col-md-8 col-sm-8 col-xs-8">
-                            <div className="title-signup text-center">
-                                <h1>Sign up</h1>
-                                <p>Join now for free ride credit</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-		<section className = "codigo">
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-12 col-sm-12 col-xs-12 text-center">  
-                        <span>LAB-235</span>
-                        <span id="imprimir-codigo">{geraNumeroAleatorio}</span><hr/><hr/>
-                    </div>
-                </div>
-            </div>
-
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-12 col-sm-12 col-xs-12 text-center">
-                         <p><span className="lab">LAB-</span>    
-                            <input id="codigo-input" type="number" placeholder="XXX" readOnly/>
-                         </p>    
-                     </div>
-                 </div>
-            </div>
-            <div className="col-xs-12 col-sm-12 text-center">
-                <NavLink to={"/signup-form"}className="btn btn-lyft btn-lg btn-block">
-					 Next
-				</NavLink>
-            </div>
-	  	</section>
-    </div>
+        }
+        </form>
+      </div>
+      }
+      {!this.state.mostrar && 
+        <div>
+          <button className="btnSiguiente" onClick={(e) => {this.mostrarTodo(e)}}>Generar Pin</button>
+        </div> 
+      }  
+      </div>
     );
+  }
 }
     export default Code;
