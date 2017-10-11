@@ -5,7 +5,8 @@ import {
 } from 'react-router-dom'
 
 class HeaderApp extends Component{
-	render(){return(
+	render(){
+	return(
 	  <header>
 		<div className="btnVolver">
 		  <NavLink to="/home">
@@ -18,6 +19,60 @@ class HeaderApp extends Component{
 	  </header>);
 	}
   }
+
+class PhoneData extends Component {
+	render(){
+		return(	  		
+		<section className="container">
+			<div className="phone container">
+				<div className="row">
+					<div className="col-sm-3 col-xs-3">
+						<div className="dropdown">
+							<div className="dropdown-toggle" data-toggle="dropdown">
+							<img className="img-responsive" src = {this.countriesFlag[this.state.selectFlag].img}/>
+					   		</div>
+					  		<ul className="dropdown-menu">
+						  		{this.countriesFlag.map((item, index) => {
+								return <li>
+											<a>
+											  <img className="img-responsive" src={item.img}  onClick={() => this.changeFlag(index)} /> 
+												  {item.pais}
+										  </a>
+									  </li>})}
+					  		</ul>
+				  		</div>
+			  		</div>
+			  		<div className="col-lg-2 col-sm-2 col-xs-2">
+				  		<input type="text" value = {this.countriesFlag[this.state.selectFlag].countriesCode} />
+			  		</div>
+			  		<div className="col-sm-7 col-xs-7">
+				  		<input type="number"  placeholder="123456789" onKeyUp={changeInput}/>
+			  		</div>
+		  		</div>
+	  		</div>
+	  		<div className="row">
+				<div className="col-xs-12 col-sm-12 text-center">
+					<p>Well send you a text to verify your phone</p>
+				</div>
+	  		</div>
+		</section>);
+	}
+}
+
+class ButtonValidator extends Component {
+	render(){
+		return(
+			<div className="next">
+				<NavLink to={"/code"}
+			  		className="btn btn-lyft btn-lg btn-block">
+			  		Next
+		  		</NavLink>
+	   		</div>
+		)
+	}
+}
+
+
 class SignUp extends Component {
   constructor(props) {
     super(props);
@@ -65,51 +120,9 @@ class SignUp extends Component {
 		return (
   			<div>
 				<HeaderApp/>
-	  		<section className="container">
-	  		<div className="phone container">
-			  	<div className="row">
-			  		<div className="col-sm-3 col-xs-3">
-					  	<div className="dropdown">
-						  	<div className="dropdown-toggle" data-toggle="dropdown">
-							  	<img className="img-responsive" src = {this.countriesFlag[this.state.selectFlag].img}/>
-						 	</div>
-						  
-							<ul className="dropdown-menu">
-								{this.countriesFlag.map((item, index) => {
-                     				 return <li>
-										  		<a>
-													<img className="img-responsive" src={item.img}  onClick={() => this.changeFlag(index)} /> 
-														{item.pais}
-												</a>
-											</li>})}
-							</ul>
-						</div>
-					</div>
-
-					<div className="col-lg-2 col-sm-2 col-xs-2">
-						<input type="text" value = {this.countriesFlag[this.state.selectFlag].countriesCode} />
-					</div>
-					<div className="col-sm-7 col-xs-7">
-						<input type="number"  placeholder="123456789" onKeyUp={changeInput}/>
-					</div>
-				</div>
-			</div>
-			<div className="row">
-		      	<div className="col-xs-12 col-sm-12 text-center">
-		    		  <p>Well send you a text to verify your phone</p>
-		      	</div>
-	    	</div>
-	       
-	  	</section>
-	
-	  	<div className="next">
-		  	<NavLink to={"/code"}
-			    className="btn btn-lyft btn-lg btn-block">
-				Next
-			</NavLink>
-	 	</div>
- 	</div> 
-		 
+				<PhoneData/>
+				<ButtonValidator/>
+		 	</div>  
 	);
   }
 }
