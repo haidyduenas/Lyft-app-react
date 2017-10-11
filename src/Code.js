@@ -15,7 +15,7 @@ class Code extends Component{
     this.t = undefined;
     this.state = {
       pin : [],
-      validar : false
+      validar : false,
       mostrar: false
     }
   }
