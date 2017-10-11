@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
+import './Code.css';
 import {
 	BrowserRouter,
 	Route,
@@ -8,6 +9,20 @@ import {
 	Redirect
 } from 'react-router-dom'
 
+class HeaderApp extends Component{
+	render(){return(
+	  <header>
+		<div className="btnVolver">
+		  <NavLink to="/code">
+			<i className="material-icons volver">keyboard_arrow_left</i>
+		  </NavLink>
+		</div>
+		<h1 className="text-center">Sign Up</h1>
+		<h4 className="text-center">Join Now for free ride credit.</h4>
+		<hr/>
+	  </header>);
+	}
+  }
 class SignUpForm extends Component {
 
 	constructor (props) {
@@ -26,23 +41,7 @@ class SignUpForm extends Component {
 		}
 		return (
             <div>
-                <div className="container-fluid">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-md-2 col-sm-2 col-xs-2">
-                                <div className="back-page1 text-center">
-									<NavLink className="btn btn-default btn-lg active init" to="/code">&lt;</NavLink >
-                                </div>
-                            </div>
-                            <div className="col-md-8 col-sm-8 col-xs-8">
-                                <div className="title-signup text-center">
-                                    <h1>Sign up</h1>
-                                    <p>Join now for free ride credit</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <HeaderApp/>
 				<div className="container-fluid">
             		<div className="container">
                 		<div className="row">
