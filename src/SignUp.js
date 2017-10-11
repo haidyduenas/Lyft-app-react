@@ -4,7 +4,6 @@ import {
 	NavLink
 } from 'react-router-dom'
 
-
 class SignUp extends Component {
   constructor(props) {
     super(props);
@@ -43,7 +42,7 @@ class SignUp extends Component {
 		}
   		render() {
     	const { model } = this.props;
-   		const onInputChange = (e) => {
+   		const changeInput = (e) => {
       		if (e.target.value.length === this.countriesFlag[this.state.selectFlag].length) {
        			 this.setState({
        			 });
@@ -51,7 +50,7 @@ class SignUp extends Component {
     	}
 		return (
   			<div>
-                <div className="container-fluid">
+        <div className="container-fluid">
 				<div className="container">
 					<div className="row">
 						<div className="col-md-2 col-sm-2 col-xs-2">
@@ -93,7 +92,7 @@ class SignUp extends Component {
 						<input type="text" value = {this.countriesFlag[this.state.selectFlag].countriesCode} />
 					</div>
 					<div className="col-sm-7 col-xs-7">
-						<input type="number"  placeholder="123456789" onKeyUp={onInputChange}/>
+						<input type="number"  placeholder="123456789" onKeyUp={changeInput}/>
 					</div>
 				</div>
 			</div>

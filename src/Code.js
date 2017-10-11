@@ -1,10 +1,6 @@
 import React, {Component} from 'react';
 import {
-	BrowserRouter,
-	Route,
-	Switch,
-	NavLink,
-	Redirect
+	NavLink
 } from 'react-router-dom';
 import './App.css';
 
@@ -18,20 +14,24 @@ const geraNumeroAleatorio = () => {
 
 const Code = () => {
    return (
-    <div>
-		<header className="text-center">
-			<div className="col-md-2 col-sm-2 col-xs-2">
-			   	<div className="back-page1 text-center">
-			   		<ul>
-				   		<li className="btn btn-default btn-lg active init"><NavLink className="btn btn-default btn-lg active init" to="/signup">Sing Up</NavLink ></li>
-			   		</ul>
-			   	</div>
-		   	</div>
-			<h1>This is Your Code</h1>
-			<h4>Copy this code and enter it in the next Section</h4>
-			<hr/>
-		</header>
-	  
+         <div>
+            <div className="container-fluid">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-2 col-sm-2 col-xs-2">
+                            <div className="back-page1 text-center">
+                                <NavLink className="btn btn-default btn-lg active init" to="/signup">&lt;</NavLink >
+                            </div>
+                        </div>
+                        <div className="col-md-8 col-sm-8 col-xs-8">
+                            <div className="title-signup text-center">
+                                <h1>Sign up</h1>
+                                <p>Join now for free ride credit</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 		<section className = "codigo">
             <div className="container">
                 <div className="row">
@@ -46,12 +46,11 @@ const Code = () => {
                 <div className="row">
                     <div className="col-md-12 col-sm-12 col-xs-12 text-center">
                          <p><span className="lab">LAB-</span>    
-                            <input id="codigo-input" type="number" placeholder="XXX" readonly/>
+                            <input id="codigo-input" type="number" placeholder="XXX" readOnly/>
                          </p>    
                      </div>
                  </div>
             </div>
-
             <div className="col-xs-12 col-sm-12 text-center">
                 <NavLink to={"/signup-form"}className="btn btn-lyft btn-lg btn-block">
 					 Next
